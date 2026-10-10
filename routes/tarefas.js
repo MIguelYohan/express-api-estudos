@@ -6,12 +6,10 @@ let proximoId = 0;
 
 const router = express.Router();
 
-// Endpoint para visualizar todas as tasks
 router.get('/', (req, res) => {
     res.status(200).json(data);
 });
 
-// Endpoint para visualizar uma task por id
 router.get('/:id', (req, res) => { // tarefas/id/1
     const taskId = Number(req.params.id);
     const task = data.find(task => task.id === taskId);
@@ -23,7 +21,6 @@ router.get('/:id', (req, res) => { // tarefas/id/1
     res.status(200).json(task);
 });
 
-// Endpoint para a criação de uma task
 router.post('/', (req, res) => {
     let taskBody = {
         id: proximoId ++,
